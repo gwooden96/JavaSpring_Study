@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans.xsd">
+						
+	<bean id='obj1' class='kr.co.softcampus.beans.TestBean' lazy-init="true"/>
+	
+	<bean id='obj2' class='kr.co.softcampus.beans.TestBean' lazy-init="true">
+		<constructor-arg value='100' type='int'/>
+	</bean>
+	
+	<bean id='obj3' class='kr.co.softcampus.beans.TestBean' lazy-init="true">
+		<constructor-arg value='11.11' type='double'/>
+	</bean>
+	
+	<bean id='obj4' class='kr.co.softcampus.beans.TestBean' lazy-init="true">
+		<constructor-arg value='문자열'/>
+	</bean>
+	
+	<bean id='obj5' class='kr.co.softcampus.beans.TestBean' lazy-init="true">
+		<constructor-arg value='200' type='int'/>
+		<constructor-arg value='22.22' type='double'/>
+		<constructor-arg value='안녕하세요' type='java.lang.String'/>
+	</bean>
+	
+	<bean id='obj6' class='kr.co.softcampus.beans.TestBean' lazy-init="true">
+		<constructor-arg value='반갑습니다' type='java.lang.String'/>
+		<constructor-arg value='300' type='int'/>
+		<constructor-arg value='22.22' type='double'/>
+	</bean>
+	
+	<bean id='obj7' class='kr.co.softcampus.beans.TestBean' lazy-init="true">
+		<constructor-arg value='44.44' type='double' index='1'/>
+		<constructor-arg value='44' type='int' index='0'/>
+		<constructor-arg value='안녕하세요' type='java.lang.String' index='2'/>
+	</bean>
+	
+	<bean id='obj8' class='kr.co.softcampus.beans.TestBean2' lazy-init="true">
+		<constructor-arg>
+			<bean class='kr.co.softcampus.beans.DataBean'/>
+		</constructor-arg>
+		<constructor-arg>
+			<bean class='kr.co.softcampus.beans.DataBean'/>
+		</constructor-arg>
+	</bean>
+	
+	<bean id='data_bean' class='kr.co.softcampus.beans.DataBean' scope='prototype'/>
+	
+	<bean id='obj9' class='kr.co.softcampus.beans.TestBean2' lazy-init="true">
+		<constructor-arg ref='data_bean'/>
+		<constructor-arg ref='data_bean'/>
+	</bean>
+</beans>
+												
